@@ -29,12 +29,12 @@ abstract contract DZExamManager is DZAccessControl {
 
     function storeExam(string memory _hash, uint256 _exam_id)
         public
-        onlyRole(LECTURER_ROLE)
+        onlyRole(ADMIN_ROLE)
         returns (
             string memory hash,
             uint256 exam_id,
             address created_by,
-            uint256 created_at,
+            uint256 created_at, 
             bool is_active
         )
     {

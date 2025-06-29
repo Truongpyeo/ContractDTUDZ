@@ -2032,7 +2032,7 @@
 		"compilationTarget": {
 			"DZTraceLogger.sol": "DZTraceLogger"
 		},
-		"evmVersion": "prague",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -2061,11 +2061,11 @@
 			]
 		},
 		"DZExamManager.sol": {
-			"keccak256": "0x970c170fef61f3e2717675502bb142a11a71ca8a545a50f133159a596c6b7913",
+			"keccak256": "0x1a51fc9064e22bef3f323063e90ffe0f80a47a0d0695d0dbc670bb5ae9f11b05",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://67acdb4a17c8e882ba5e3ef165e27fdbef10ca786d16fc743efd6a45495e8069",
-				"dweb:/ipfs/QmY9khb4pkcz1kyHkyhaUtbsXif4qeBzWokcaYMWqqwaDC"
+				"bzz-raw://a81b0d77f2886dd4cc37147a4ed2474e5367a6ec09894c77b9ad2fe5de05c9aa",
+				"dweb:/ipfs/QmTSeLDuQRMowzYVShpWhaALyAM1kkvfeHMsKEQLbu5Hq1"
 			]
 		},
 		"DZReviewManager.sol": {
