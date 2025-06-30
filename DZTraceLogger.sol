@@ -2,6 +2,7 @@
 pragma solidity ^0.8.6;
 
 import "./DZCertificate.sol";
+import "./Errors.sol";
 
 abstract contract DZTraceLogger is DZCertificate {
     struct TraceRecord {

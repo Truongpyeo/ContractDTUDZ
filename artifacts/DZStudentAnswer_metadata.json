@@ -1326,11 +1326,11 @@
 			]
 		},
 		"DZStudentAnswer.sol": {
-			"keccak256": "0xbd58577b2f5251d4ea6fb160d08c2a597f63bc027ca59bb70cefed6b8a95bfd0",
+			"keccak256": "0xdd75286468a817141f2555cca48f2b4471dd0de349ab7b28ec997783c2f2dcda",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://990e861d7839475519c29989234d92128f94162e56c36a01c5e1d6615da7d0a7",
-				"dweb:/ipfs/Qma5EbFCktkU54yLovwgTgbU1EMB3kAWBkQ9SyJmoN8BVh"
+				"bzz-raw://761a6f90a485f948c6c9d055660293922329eb5328257409fb3a0a04c2fbb162",
+				"dweb:/ipfs/QmNyGCCBNmsDtpaXaZJdrHxXmTXeVJzTfx4eBiHLpkZFti"
 			]
 		},
 		"Errors.sol": {

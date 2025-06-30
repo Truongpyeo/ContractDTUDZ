@@ -2750,27 +2750,27 @@
 			]
 		},
 		"DZScoreManager.sol": {
-			"keccak256": "0x82c9a3b82ba9f6bd708a7c9db9cad5a2d99c65e0f80fb69c966cf5d7fa29b6a5",
+			"keccak256": "0x9fa297107f6700e97e9cbb183aa004a9c6b75a13042977f63757e6b193ca4bfa",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4153f974e47cef3f47a5f0d067245c14ef4bbf254d6b338484754c117702c5f7",
-				"dweb:/ipfs/QmVoucfZfVjNC8oo6JL3RYapTmyZPK4BoZVoxPQNP88p52"
+				"bzz-raw://239f59179f715db1e4dae0eacb2d6e124d4f3f807541534803ca87b07eceed99",
+				"dweb:/ipfs/QmTvNKc1R2eMP3hKtsPCFLAhqTBzXCwdew5pS8UJdUL3Dr"
 			]
 		},
 		"DZStudentAnswer.sol": {
-			"keccak256": "0xbd58577b2f5251d4ea6fb160d08c2a597f63bc027ca59bb70cefed6b8a95bfd0",
+			"keccak256": "0xdd75286468a817141f2555cca48f2b4471dd0de349ab7b28ec997783c2f2dcda",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://990e861d7839475519c29989234d92128f94162e56c36a01c5e1d6615da7d0a7",
-				"dweb:/ipfs/Qma5EbFCktkU54yLovwgTgbU1EMB3kAWBkQ9SyJmoN8BVh"
+				"bzz-raw://761a6f90a485f948c6c9d055660293922329eb5328257409fb3a0a04c2fbb162",
+				"dweb:/ipfs/QmNyGCCBNmsDtpaXaZJdrHxXmTXeVJzTfx4eBiHLpkZFti"
 			]
 		},
 		"DZTraceLogger.sol": {
-			"keccak256": "0x8a43f13f99ae1230ced4b16d3eb646846a7de701e96eaf87fc1464b441bdd7e4",
+			"keccak256": "0x57b9758ecf73736704ad8ea288d10ad698d4a315572dddd2fa2cb5680bbc8ef2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1aac732db70a45ae060fe7d55a58d130b6f212ce519dfb4ffd33e5f8ef2c3091",
-				"dweb:/ipfs/QmW6uw7dXaspy6jXzeCuyAdg3ePsP6GhDNnaNVyhxhAZyS"
+				"bzz-raw://c705182557c0e07bf4e52e250e3023d7182b01b9898574a5f69f9478f5309f4c",
+				"dweb:/ipfs/QmPwX1TVs7Ydpq1JkEVnH4fBshtuN1KGN1DVqkYWBzHNdA"
 			]
 		},
 		"Errors.sol": {

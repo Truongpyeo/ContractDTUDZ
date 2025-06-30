@@ -2,6 +2,7 @@
 pragma solidity ^0.8.6;
 
 import "./DZStudentAnswer.sol";
+import "./Errors.sol";
 
 abstract contract DZScoreManager is DZStudentAnswer {
     struct Score {

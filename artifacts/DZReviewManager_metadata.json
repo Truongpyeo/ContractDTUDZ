@@ -7,6 +7,11 @@
 		"abi": [
 			{
 				"inputs": [],
+				"name": "E001",
+				"type": "error"
+			},
+			{
+				"inputs": [],
 				"name": "E002",
 				"type": "error"
 			},
@@ -67,12 +72,52 @@
 			},
 			{
 				"inputs": [],
+				"name": "E303",
+				"type": "error"
+			},
+			{
+				"inputs": [],
 				"name": "E305",
 				"type": "error"
 			},
 			{
 				"inputs": [],
 				"name": "E501",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E502",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E503",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E601",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E602",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E603",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E604",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E605",
 				"type": "error"
 			},
 			{
@@ -2004,19 +2049,19 @@
 			]
 		},
 		"DZScoreManager.sol": {
-			"keccak256": "0xe7410a6ae4f08d699525ce76ab3ff7d59906dc130a0a82e6dd923c509825adcc",
+			"keccak256": "0x82c9a3b82ba9f6bd708a7c9db9cad5a2d99c65e0f80fb69c966cf5d7fa29b6a5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://57fc0381a8dee892806dbfd7ce72bf9cce0e92d84d2bcca22ecf6446c0d790ab",
-				"dweb:/ipfs/QmVKGbgYwvsfQ7hxarXw26oB9n6fXjaqQNLhh4TKLyEsgk"
+				"bzz-raw://4153f974e47cef3f47a5f0d067245c14ef4bbf254d6b338484754c117702c5f7",
+				"dweb:/ipfs/QmVoucfZfVjNC8oo6JL3RYapTmyZPK4BoZVoxPQNP88p52"
 			]
 		},
 		"DZStudentAnswer.sol": {
-			"keccak256": "0xa2cbdb74a6c1431437f92d212e6d5890db11858d8b817fa29acad455135106f8",
+			"keccak256": "0xbd58577b2f5251d4ea6fb160d08c2a597f63bc027ca59bb70cefed6b8a95bfd0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2a578de52571d133579e6670a0b6529bdcb8a024c716b119ae4c7a9e726e62e3",
-				"dweb:/ipfs/QmbKf6QfzymUymGqdRBY4qSYBUygHtUyXaHbcNtE6nGwM9"
+				"bzz-raw://990e861d7839475519c29989234d92128f94162e56c36a01c5e1d6615da7d0a7",
+				"dweb:/ipfs/Qma5EbFCktkU54yLovwgTgbU1EMB3kAWBkQ9SyJmoN8BVh"
 			]
 		},
 		"Errors.sol": {

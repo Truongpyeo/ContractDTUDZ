@@ -105,6 +105,11 @@
 	"abi": [
 		{
 			"inputs": [],
+			"name": "E001",
+			"type": "error"
+		},
+		{
+			"inputs": [],
 			"name": "E002",
 			"type": "error"
 		},
@@ -165,12 +170,52 @@
 		},
 		{
 			"inputs": [],
+			"name": "E303",
+			"type": "error"
+		},
+		{
+			"inputs": [],
 			"name": "E305",
 			"type": "error"
 		},
 		{
 			"inputs": [],
 			"name": "E501",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E502",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E503",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E601",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E602",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E603",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E604",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E605",
 			"type": "error"
 		},
 		{

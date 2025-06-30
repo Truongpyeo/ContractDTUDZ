@@ -2,6 +2,7 @@
 pragma solidity ^0.8.6;
 
 import "./DZTraceLogger.sol";
+import "./Errors.sol";
 
 abstract contract DZTestManager is DZTraceLogger {
     struct Tests {

@@ -7,6 +7,11 @@
 		"abi": [
 			{
 				"inputs": [],
+				"name": "E001",
+				"type": "error"
+			},
+			{
+				"inputs": [],
 				"name": "E002",
 				"type": "error"
 			},
@@ -17,12 +22,22 @@
 			},
 			{
 				"inputs": [],
+				"name": "E004",
+				"type": "error"
+			},
+			{
+				"inputs": [],
 				"name": "E005",
 				"type": "error"
 			},
 			{
 				"inputs": [],
 				"name": "E101",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E103",
 				"type": "error"
 			},
 			{
@@ -42,12 +57,87 @@
 			},
 			{
 				"inputs": [],
+				"name": "E204",
+				"type": "error"
+			},
+			{
+				"inputs": [],
 				"name": "E301",
 				"type": "error"
 			},
 			{
 				"inputs": [],
+				"name": "E302",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E303",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E305",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E501",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E502",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E503",
+				"type": "error"
+			},
+			{
+				"inputs": [],
 				"name": "E504",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E601",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E602",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E603",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E604",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E605",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E701",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E703",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E704",
 				"type": "error"
 			},
 			{
@@ -2492,35 +2582,35 @@
 			]
 		},
 		"DZExamManager.sol": {
-			"keccak256": "0xfb1d4b2fe2580def638e9700f4680ceffecf5a7e42ade53cf512f24c1a5405e6",
+			"keccak256": "0x361c0eb2537f3abfa36a898e72ccd4af5f1053312716198e041136f4d63a586e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://21c03979766976dbf1bd058ea4e1f67ccf757696484178f770d31e6e8ca2ccb2",
-				"dweb:/ipfs/QmRTKmoNEDLNpNgJLaHTCnry3sdghL9wPBee9qrih13mjC"
+				"bzz-raw://fe55b1580dcb25947c2563856680a7e5008bbfffb68bf2b5cd5eaacdaf49cc4a",
+				"dweb:/ipfs/QmU3fu1TPwd7zvyz84aZEa57K41x5pA6Pn1DRE9kafLnF1"
 			]
 		},
 		"DZReviewManager.sol": {
-			"keccak256": "0xc6340e46b9632c35a3e529613cabdfdd717ee34b32a443d884a0d19770ff6e6c",
+			"keccak256": "0x8574101115a9780d632673331876ddcd6a933c4b2694ae099bb25c1518e9252c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8f259ae818d173ba7cdd7e67ac66f34031e5e84eeb07c2deee4e9b6fc83ee4a4",
-				"dweb:/ipfs/QmPZkpkrWMDfB9yrT6wQWV3K2UCnMt5KudN6iNv7AuPaHF"
+				"bzz-raw://fbe3950b936091e266ce1605cdf7ae1ca0deae521f1c7544a2c78d8b4e3eaa1f",
+				"dweb:/ipfs/QmbRb89jiHZwBrVmW5LQ8UcfvQsWG9h4U8mNYVWkM6nUeL"
 			]
 		},
 		"DZScoreManager.sol": {
-			"keccak256": "0xe7410a6ae4f08d699525ce76ab3ff7d59906dc130a0a82e6dd923c509825adcc",
+			"keccak256": "0x82c9a3b82ba9f6bd708a7c9db9cad5a2d99c65e0f80fb69c966cf5d7fa29b6a5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://57fc0381a8dee892806dbfd7ce72bf9cce0e92d84d2bcca22ecf6446c0d790ab",
-				"dweb:/ipfs/QmVKGbgYwvsfQ7hxarXw26oB9n6fXjaqQNLhh4TKLyEsgk"
+				"bzz-raw://4153f974e47cef3f47a5f0d067245c14ef4bbf254d6b338484754c117702c5f7",
+				"dweb:/ipfs/QmVoucfZfVjNC8oo6JL3RYapTmyZPK4BoZVoxPQNP88p52"
 			]
 		},
 		"DZStudentAnswer.sol": {
-			"keccak256": "0xa2cbdb74a6c1431437f92d212e6d5890db11858d8b817fa29acad455135106f8",
+			"keccak256": "0xbd58577b2f5251d4ea6fb160d08c2a597f63bc027ca59bb70cefed6b8a95bfd0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2a578de52571d133579e6670a0b6529bdcb8a024c716b119ae4c7a9e726e62e3",
-				"dweb:/ipfs/QmbKf6QfzymUymGqdRBY4qSYBUygHtUyXaHbcNtE6nGwM9"
+				"bzz-raw://990e861d7839475519c29989234d92128f94162e56c36a01c5e1d6615da7d0a7",
+				"dweb:/ipfs/Qma5EbFCktkU54yLovwgTgbU1EMB3kAWBkQ9SyJmoN8BVh"
 			]
 		},
 		"Errors.sol": {

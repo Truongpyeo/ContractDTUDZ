@@ -2,6 +2,8 @@
 pragma solidity ^0.8.6;
 
 import "./DZExamManager.sol";
+import "./Errors.sol";
+
 
 abstract contract DZStudentAnswer is DZExamManager {
     struct StudentAnswer {
