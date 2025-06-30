@@ -53,11 +53,7 @@ abstract contract DZTraceLogger is DZCertificate {
         view
         returns (TraceRecord[] memory)
     {
-        require(
-            hasRole(ADMIN_ROLE, msg.sender) ||
-            hasRole(LECTURER_ROLE, msg.sender),
-            "Access denied"
-        );
+        if(!(hasRole(ADMIN_ROLE, msg.sender) || hasRole(LECTURER_ROLE, msg.sender))) revert Errors.E101();
         return traces[_entity_id];
     }
 

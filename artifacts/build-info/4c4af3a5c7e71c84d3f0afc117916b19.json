@@ -1,0 +1,1317 @@
+{
+	"id": "4c4af3a5c7e71c84d3f0afc117916b19",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.30",
+	"solcLongVersion": "0.8.30+commit.73712a01",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Errors.sol": {
+				"content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.6;\r\n\r\nlibrary Errors {\r\n    // === INPUT VALIDATION ERRORS ===\r\n    error E001(); // Invalid input parameter\r\n    error E002(); // Empty string not allowed  \r\n    error E003(); // Invalid ID (must be > 0)\r\n    error E004(); // Invalid score (must be 0-100)\r\n    error E005(); // Invalid address (zero address)\r\n\r\n    // === ACCESS CONTROL ERRORS ===\r\n    error E101(); // Not authorized  \r\n    error E102(); // Only admin allowed\r\n    error E103(); // Only lecturer allowed\r\n    error E104(); // Only student allowed\r\n    error E105(); // Only employer allowed\r\n\r\n    // === STUDENT MANAGEMENT ERRORS ===\r\n    error E201(); // Student not found\r\n    error E202(); // Student already exists\r\n    error E203(); // Student address already set\r\n    error E204(); // Student not registered\r\n\r\n    // === EXAM MANAGEMENT ERRORS ===\r\n    error E301(); // Exam not found\r\n    error E302(); // Exam already exists  \r\n    error E303(); // Exam is locked\r\n    error E304(); // Exam already locked\r\n    error E305(); // Only exam creator can perform this action\r\n\r\n    // === TEST MANAGEMENT ERRORS ===\r\n    error E401(); // Test not found\r\n    error E402(); // Test already exists\r\n    error E403(); // Test is blocked\r\n    error E404(); // Test already blocked\r\n    error E405(); // Test is not blocked\r\n\r\n    // === SCORE MANAGEMENT ERRORS ===\r\n    error E501(); // Score not found\r\n    error E502(); // Score already exists\r\n    error E503(); // Score is finalized\r\n    error E504(); // Score not finalized yet\r\n\r\n    // === ANSWER MANAGEMENT ERRORS ===\r\n    error E601(); // Answer not found\r\n    error E602(); // Answer already submitted\r\n    error E603(); // Answer not submitted yet\r\n    error E604(); // Answer already scored\r\n    error E605(); // Cannot submit for other student\r\n\r\n    // === REVIEW REQUEST ERRORS ===\r\n    error E701(); // Review request not found\r\n    error E702(); // Review request already exists\r\n    error E703(); // Review request already processed\r\n    error E704(); // Invalid review status\r\n\r\n    // === CERTIFICATE ERRORS ===\r\n    error E801(); // Certificate not found\r\n    error E802(); // Certificate already issued\r\n    error E803(); // Certificate is revoked\r\n    error E804(); // Certificate already revoked\r\n\r\n    // === TRACE SYSTEM ERRORS ===\r\n    error E901(); // No trace records found\r\n    error E902(); // Trace access denied\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": true,
+				"runs": 50
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": [],
+			"evmVersion": "london"
+		}
+	},
+	"output": {
+		"contracts": {
+			"Errors.sol": {
+				"Errors": {
+					"abi": [
+						{
+							"inputs": [],
+							"name": "E001",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E002",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E003",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E004",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E005",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E101",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E102",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E103",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E104",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E105",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E201",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E202",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E203",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E204",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E301",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E302",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E303",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E304",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E305",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E401",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E402",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E403",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E404",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E405",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E501",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E502",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E503",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E504",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E601",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E602",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E603",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E604",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E605",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E701",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E702",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E703",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E704",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E801",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E802",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E803",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E804",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E901",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "E902",
+							"type": "error"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"Errors.sol\":60:2421  library Errors {... */\n  dataSize(sub_0)\n  dataOffset(sub_0)\n  0x0b\n  dup3\n  dup3\n  dup3\n  codecopy\n  dup1\n  mload\n  0x00\n  byte\n  0x73\n  eq\n  tag_1\n  jumpi\n  mstore(0x00, shl(0xe0, 0x4e487b71))\n  mstore(0x04, 0x00)\n  revert(0x00, 0x24)\ntag_1:\n  mstore(0x00, address)\n  0x73\n  dup2\n  mstore8\n  dup3\n  dup2\n  return\nstop\n\nsub_0: assembly {\n        /* \"Errors.sol\":60:2421  library Errors {... */\n      eq(address, deployTimeAddress())\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa264697066735822122036068d8fb642fb8adce48434d309c39ade76894813912333d2ad7a8c9e9ac66464736f6c634300081e0033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122036068d8fb642fb8adce48434d309c39ade76894813912333d2ad7a8c9e9ac66464736f6c634300081e0033",
+							"opcodes": "PUSH1 0x56 PUSH1 0x37 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x2A JUMPI PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH1 0x0 MSTORE PUSH1 0x0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CALLDATASIZE MOD DUP14 DUP16 0xB6 TIMESTAMP EXTSTATICCALL DUP11 0xDC RETF DUP5 CALLVALUE 0xD3 MULMOD 0xC3 SWAP11 0xDE PUSH23 0x894813912333D2AD7A8C9E9AC66464736F6C634300081E STOP CALLER ",
+							"sourceMap": "60:2361:0:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;60:2361:0;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122036068d8fb642fb8adce48434d309c39ade76894813912333d2ad7a8c9e9ac66464736f6c634300081e0033",
+							"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CALLDATASIZE MOD DUP14 DUP16 0xB6 TIMESTAMP EXTSTATICCALL DUP11 0xDC RETF DUP5 CALLVALUE 0xD3 MULMOD 0xC3 SWAP11 0xDE PUSH23 0x894813912333D2AD7A8C9E9AC66464736F6C634300081E STOP CALLER ",
+							"sourceMap": "60:2361:0:-:0;;;;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "17200",
+								"executionCost": "103",
+								"totalCost": "17303"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH",
+									"source": 0,
+									"value": "B"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "MLOAD",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "BYTE",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "EQ",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": -1,
+									"end": -1,
+									"name": "PUSH",
+									"source": -1,
+									"value": "4E487B71"
+								},
+								{
+									"begin": -1,
+									"end": -1,
+									"name": "PUSH",
+									"source": -1,
+									"value": "E0"
+								},
+								{
+									"begin": -1,
+									"end": -1,
+									"name": "SHL",
+									"source": -1
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH",
+									"source": 0,
+									"value": "4"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH",
+									"source": 0,
+									"value": "24"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "ADDRESS",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "MSTORE8",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 2421,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a264697066735822122036068d8fb642fb8adce48434d309c39ade76894813912333d2ad7a8c9e9ac66464736f6c634300081e0033",
+									".code": [
+										{
+											"begin": 60,
+											"end": 2421,
+											"name": "PUSHDEPLOYADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 2421,
+											"name": "ADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 2421,
+											"name": "EQ",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 2421,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 60,
+											"end": 2421,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 60,
+											"end": 2421,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 2421,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 60,
+											"end": 2421,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 2421,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							},
+							"sourceList": [
+								"Errors.sol",
+								"#utility.yul"
+							]
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"E001\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E002\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E003\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E004\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E005\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E101\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E102\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E103\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E104\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E105\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E201\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E202\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E203\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E204\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E301\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E302\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E303\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E304\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E305\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E401\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E402\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E403\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E404\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E405\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E501\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E502\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E503\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E504\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E601\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E602\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E603\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E604\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E605\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E701\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E702\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E703\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E704\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E801\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E802\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E803\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E804\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E901\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"E902\",\"type\":\"error\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Errors.sol\":\"Errors\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":50},\"remappings\":[]},\"sources\":{\"Errors.sol\":{\"keccak256\":\"0x23580d09f44e6c8621943aff3da5b625661c65812317bb6cffc5301c829bd30f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://45d0a0fd11c275453b1b4a5b8759474f7621ee086fe12717477849c56f306840\",\"dweb:/ipfs/QmPHh5r4XYX3aSApamARBjo3a18tpYBUSYhT6h8kP31DGx\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"Errors.sol": {
+				"ast": {
+					"absolutePath": "Errors.sol",
+					"exportedSymbols": {
+						"Errors": [
+							88
+						]
+					},
+					"id": 89,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".6"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "33:23:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "Errors",
+							"contractDependencies": [],
+							"contractKind": "library",
+							"fullyImplemented": true,
+							"id": 88,
+							"linearizedBaseContracts": [
+								88
+							],
+							"name": "Errors",
+							"nameLocation": "68:6:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"errorSelector": "bf5f2051",
+									"id": 3,
+									"name": "E001",
+									"nameLocation": "128:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 2,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "132:2:0"
+									},
+									"src": "122:13:0"
+								},
+								{
+									"errorSelector": "cb1a4dfc",
+									"id": 5,
+									"name": "E002",
+									"nameLocation": "174:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 4,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "178:2:0"
+									},
+									"src": "168:13:0"
+								},
+								{
+									"errorSelector": "07cd6387",
+									"id": 7,
+									"name": "E003",
+									"nameLocation": "223:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 6,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "227:2:0"
+									},
+									"src": "217:13:0"
+								},
+								{
+									"errorSelector": "8cc0e7cf",
+									"id": 9,
+									"name": "E004",
+									"nameLocation": "270:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 8,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "274:2:0"
+									},
+									"src": "264:13:0"
+								},
+								{
+									"errorSelector": "2aaa5c97",
+									"id": 11,
+									"name": "E005",
+									"nameLocation": "322:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 10,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "326:2:0"
+									},
+									"src": "316:13:0"
+								},
+								{
+									"errorSelector": "bf441c95",
+									"id": 13,
+									"name": "E101",
+									"nameLocation": "415:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 12,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "419:2:0"
+									},
+									"src": "409:13:0"
+								},
+								{
+									"errorSelector": "3ea10c8a",
+									"id": 15,
+									"name": "E102",
+									"nameLocation": "454:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 14,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "458:2:0"
+									},
+									"src": "448:13:0"
+								},
+								{
+									"errorSelector": "69a5901a",
+									"id": 17,
+									"name": "E103",
+									"nameLocation": "495:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 16,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "499:2:0"
+									},
+									"src": "489:13:0"
+								},
+								{
+									"errorSelector": "32b72537",
+									"id": 19,
+									"name": "E104",
+									"nameLocation": "539:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 18,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "543:2:0"
+									},
+									"src": "533:13:0"
+								},
+								{
+									"errorSelector": "250a99b6",
+									"id": 21,
+									"name": "E105",
+									"nameLocation": "582:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 20,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "586:2:0"
+									},
+									"src": "576:13:0"
+								},
+								{
+									"errorSelector": "4d3ca3a2",
+									"id": 23,
+									"name": "E201",
+									"nameLocation": "670:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 22,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "674:2:0"
+									},
+									"src": "664:13:0"
+								},
+								{
+									"errorSelector": "754d1f4d",
+									"id": 25,
+									"name": "E202",
+									"nameLocation": "710:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 24,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "714:2:0"
+									},
+									"src": "704:13:0"
+								},
+								{
+									"errorSelector": "1517f497",
+									"id": 27,
+									"name": "E203",
+									"nameLocation": "755:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 26,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "759:2:0"
+									},
+									"src": "749:13:0"
+								},
+								{
+									"errorSelector": "29d53c73",
+									"id": 29,
+									"name": "E204",
+									"nameLocation": "805:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 28,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "809:2:0"
+									},
+									"src": "799:13:0"
+								},
+								{
+									"errorSelector": "306e0003",
+									"id": 31,
+									"name": "E301",
+									"nameLocation": "891:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 30,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "895:2:0"
+									},
+									"src": "885:13:0"
+								},
+								{
+									"errorSelector": "f61da9e5",
+									"id": 33,
+									"name": "E302",
+									"nameLocation": "928:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 32,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "932:2:0"
+									},
+									"src": "922:13:0"
+								},
+								{
+									"errorSelector": "737f4d76",
+									"id": 35,
+									"name": "E303",
+									"nameLocation": "972:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 34,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "976:2:0"
+									},
+									"src": "966:13:0"
+								},
+								{
+									"errorSelector": "4ec964cf",
+									"id": 37,
+									"name": "E304",
+									"nameLocation": "1009:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 36,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1013:2:0"
+									},
+									"src": "1003:13:0"
+								},
+								{
+									"errorSelector": "84bf783e",
+									"id": 39,
+									"name": "E305",
+									"nameLocation": "1051:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 38,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1055:2:0"
+									},
+									"src": "1045:13:0"
+								},
+								{
+									"errorSelector": "13337848",
+									"id": 41,
+									"name": "E401",
+									"nameLocation": "1156:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 40,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1160:2:0"
+									},
+									"src": "1150:13:0"
+								},
+								{
+									"errorSelector": "f514827b",
+									"id": 43,
+									"name": "E402",
+									"nameLocation": "1193:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 42,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1197:2:0"
+									},
+									"src": "1187:13:0"
+								},
+								{
+									"errorSelector": "0f6f65d1",
+									"id": 45,
+									"name": "E403",
+									"nameLocation": "1235:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 44,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1239:2:0"
+									},
+									"src": "1229:13:0"
+								},
+								{
+									"errorSelector": "4fa76fc5",
+									"id": 47,
+									"name": "E404",
+									"nameLocation": "1273:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 46,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1277:2:0"
+									},
+									"src": "1267:13:0"
+								},
+								{
+									"errorSelector": "f3305048",
+									"id": 49,
+									"name": "E405",
+									"nameLocation": "1316:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 48,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1320:2:0"
+									},
+									"src": "1310:13:0"
+								},
+								{
+									"errorSelector": "cf6badb8",
+									"id": 51,
+									"name": "E501",
+									"nameLocation": "1400:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 50,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1404:2:0"
+									},
+									"src": "1394:13:0"
+								},
+								{
+									"errorSelector": "089ea6a6",
+									"id": 53,
+									"name": "E502",
+									"nameLocation": "1438:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 52,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1442:2:0"
+									},
+									"src": "1432:13:0"
+								},
+								{
+									"errorSelector": "023e8092",
+									"id": 55,
+									"name": "E503",
+									"nameLocation": "1481:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 54,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1485:2:0"
+									},
+									"src": "1475:13:0"
+								},
+								{
+									"errorSelector": "95d3efef",
+									"id": 57,
+									"name": "E504",
+									"nameLocation": "1522:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 56,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1526:2:0"
+									},
+									"src": "1516:13:0"
+								},
+								{
+									"errorSelector": "21c171db",
+									"id": 59,
+									"name": "E601",
+									"nameLocation": "1611:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 58,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1615:2:0"
+									},
+									"src": "1605:13:0"
+								},
+								{
+									"errorSelector": "85c3fe33",
+									"id": 61,
+									"name": "E602",
+									"nameLocation": "1650:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 60,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1654:2:0"
+									},
+									"src": "1644:13:0"
+								},
+								{
+									"errorSelector": "817c238b",
+									"id": 63,
+									"name": "E603",
+									"nameLocation": "1697:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 62,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1701:2:0"
+									},
+									"src": "1691:13:0"
+								},
+								{
+									"errorSelector": "5b9037ef",
+									"id": 65,
+									"name": "E604",
+									"nameLocation": "1744:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 64,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1748:2:0"
+									},
+									"src": "1738:13:0"
+								},
+								{
+									"errorSelector": "70ba5fb4",
+									"id": 67,
+									"name": "E605",
+									"nameLocation": "1788:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 66,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1792:2:0"
+									},
+									"src": "1782:13:0"
+								},
+								{
+									"errorSelector": "8fccc307",
+									"id": 69,
+									"name": "E701",
+									"nameLocation": "1882:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 68,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1886:2:0"
+									},
+									"src": "1876:13:0"
+								},
+								{
+									"errorSelector": "2a34aae3",
+									"id": 71,
+									"name": "E702",
+									"nameLocation": "1929:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 70,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1933:2:0"
+									},
+									"src": "1923:13:0"
+								},
+								{
+									"errorSelector": "426b9248",
+									"id": 73,
+									"name": "E703",
+									"nameLocation": "1981:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 72,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1985:2:0"
+									},
+									"src": "1975:13:0"
+								},
+								{
+									"errorSelector": "93c6ad73",
+									"id": 75,
+									"name": "E704",
+									"nameLocation": "2036:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 74,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "2040:2:0"
+									},
+									"src": "2030:13:0"
+								},
+								{
+									"errorSelector": "4ee0499a",
+									"id": 77,
+									"name": "E801",
+									"nameLocation": "2117:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 76,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "2121:2:0"
+									},
+									"src": "2111:13:0"
+								},
+								{
+									"errorSelector": "37c74776",
+									"id": 79,
+									"name": "E802",
+									"nameLocation": "2161:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 78,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "2165:2:0"
+									},
+									"src": "2155:13:0"
+								},
+								{
+									"errorSelector": "ecdfe98e",
+									"id": 81,
+									"name": "E803",
+									"nameLocation": "2210:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 80,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "2214:2:0"
+									},
+									"src": "2204:13:0"
+								},
+								{
+									"errorSelector": "01e117d4",
+									"id": 83,
+									"name": "E804",
+									"nameLocation": "2255:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 82,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "2259:2:0"
+									},
+									"src": "2249:13:0"
+								},
+								{
+									"errorSelector": "2949edcf",
+									"id": 85,
+									"name": "E901",
+									"nameLocation": "2343:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 84,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "2347:2:0"
+									},
+									"src": "2337:13:0"
+								},
+								{
+									"errorSelector": "74e5cc5f",
+									"id": 87,
+									"name": "E902",
+									"nameLocation": "2388:4:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 86,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "2392:2:0"
+									},
+									"src": "2382:13:0"
+								}
+							],
+							"scope": 89,
+							"src": "60:2361:0",
+							"usedErrors": [
+								3,
+								5,
+								7,
+								9,
+								11,
+								13,
+								15,
+								17,
+								19,
+								21,
+								23,
+								25,
+								27,
+								29,
+								31,
+								33,
+								35,
+								37,
+								39,
+								41,
+								43,
+								45,
+								47,
+								49,
+								51,
+								53,
+								55,
+								57,
+								59,
+								61,
+								63,
+								65,
+								67,
+								69,
+								71,
+								73,
+								75,
+								77,
+								79,
+								81,
+								83,
+								85,
+								87
+							],
+							"usedEvents": []
+						}
+					],
+					"src": "33:2388:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

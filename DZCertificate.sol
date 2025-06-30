@@ -2,6 +2,7 @@
 pragma solidity ^0.8.6;
 
 import "./DZReviewManager.sol";
+import "./Errors.sol";
 
 abstract contract DZCertificate is DZReviewManager {
     struct Certificate {
@@ -42,13 +43,13 @@ abstract contract DZCertificate is DZReviewManager {
     }
 
     function balanceOf(address owner) public view returns (uint256) {
-        require(owner != address(0), "Invalid address");
+        if(owner == address(0)) revert Errors.E005();
         return _balances[owner];
     }
 
     function ownerOf(uint256 tokenId) public view returns (address) {
         address owner = _owners[tokenId];
-        require(owner != address(0), "Nonexistent token");
+        if(owner == address(0)) revert Errors.E801();
         return owner;
     }
 
@@ -57,13 +58,13 @@ abstract contract DZCertificate is DZReviewManager {
     }
 
     function tokenURI(uint256 tokenId) public view returns (string memory) {
-        require(_exists(tokenId), "Token does not exist");
+        if(!_exists(tokenId)) revert Errors.E801();
         return certificates[tokenId].metadata_uri;
     }
 
     function _mint(address to, uint256 tokenId) internal {
-        require(to != address(0), "Mint to zero address");
-        require(!_exists(tokenId), "Token already minted");
+        if(to == address(0)) revert Errors.E005();
+        if(_exists(tokenId)) revert Errors.E802();
         _owners[tokenId] = to;
         _balances[to] += 1;
         emit Transfer(address(0), to, tokenId);
@@ -74,12 +75,12 @@ abstract contract DZCertificate is DZReviewManager {
         onlyRole(LECTURER_ROLE)
         returns (uint256)
     {
-        require(exams[_exam_id].is_active, "Exam does not exist");
-        require(scores[_student_id][_exam_id].is_final, "Score not finalized");
-        require(studentCertificates[_student_id][_exam_id] == 0, "Certificate already exists");
-        require(studentAddresses[_student_id] != address(0), "Student address missing");
-        require(bytes(_metadata_uri).length > 0, "URI empty");
-
+        if(!exams[_exam_id].is_active) revert Errors.E301();
+        if(!scores[_student_id][_exam_id].is_final) revert Errors.E504();
+        if(studentCertificates[_student_id][_exam_id] != 0) revert Errors.E802();
+        if(studentAddresses[_student_id] == address(0)) revert Errors.E201();
+        if(bytes(_metadata_uri).length == 0) revert Errors.E002();
+        
         _currentTokenId++;
         uint256 tokenId = _currentTokenId;
 
@@ -103,26 +104,26 @@ abstract contract DZCertificate is DZReviewManager {
     }
 
     function revokeCertificate(uint256 tokenId) public onlyRole(ADMIN_ROLE) {
-        require(certificates[tokenId].is_valid, "Already revoked");
+        if(!certificates[tokenId].is_valid) revert Errors.E803();
         certificates[tokenId].is_valid = false;
         emit CertificateRevoked(tokenId, msg.sender);
     }
 
     function getMyCertificate(uint256 _student_id, uint256 _exam_id) public view onlyRole(STUDENT_ROLE) returns (Certificate memory) {
-        require(studentAddresses[_student_id] == msg.sender, "Not your certificate");
+        if(studentAddresses[_student_id] != msg.sender) revert Errors.E101();
         uint256 tokenId = studentCertificates[_student_id][_exam_id];
-        require(tokenId != 0, "Not found");
+        if(tokenId == 0) revert Errors.E801();
         return certificates[tokenId];
     }
 
     function verifyCertificate(uint256 tokenId) public view onlyRole(EMPLOYER_ROLE) returns (Certificate memory) {
-        require(certificates[tokenId].is_valid, "Invalid certificate");
+        if(!certificates[tokenId].is_valid) revert Errors.E803();
         return certificates[tokenId];
     }
 
     function getCertificateByStudent(uint256 _student_id, uint256 _exam_id) public view onlyRole(EMPLOYER_ROLE) returns (Certificate memory) {
         uint256 tokenId = studentCertificates[_student_id][_exam_id];
-        require(tokenId != 0, "Certificate not found");
+        if(tokenId == 0) revert Errors.E801();
         return certificates[tokenId];
     }
 }

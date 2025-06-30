@@ -3,6 +3,8 @@ pragma solidity ^0.8.6;
 
 import "./DZScoreManager.sol";
 
+import "./Errors.sol";
+
 abstract contract DZReviewManager is DZScoreManager {
     struct ReviewRequest {
         uint256 student_id;
@@ -35,11 +37,11 @@ abstract contract DZReviewManager is DZScoreManager {
     );
 
     function storeReviewRequest(uint256 _student_id, uint256 _exam_id, string memory _reason) public onlyRole(STUDENT_ROLE) {
-        require(studentAddresses[_student_id] == msg.sender, "Can only request for yourself");
-        require(exams[_exam_id].is_active, "Exam does not exist");
-        require(scores[_student_id][_exam_id].student_id != 0, "Score not found");
-        require(!reviewRequests[_student_id][_exam_id].is_processed, "Already reviewed");
-        require(bytes(_reason).length > 0, "Reason required");
+        if(studentAddresses[_student_id] != msg.sender) revert Errors.E101();
+        if(!exams[_exam_id].is_active) revert Errors.E301();
+        if(scores[_student_id][_exam_id].student_id == 0) revert Errors.E501();
+        if(reviewRequests[_student_id][_exam_id].is_processed) revert Errors.E703();
+        if(bytes(_reason).length == 0) revert Errors.E002();
 
         uint256 current_score = scores[_student_id][_exam_id].score;
 
@@ -61,7 +63,7 @@ abstract contract DZReviewManager is DZScoreManager {
 
     function createMyReviewRequest(uint256 _exam_id, string memory _reason) public onlyRole(STUDENT_ROLE) {
         uint256 studentId = addressToStudentId[msg.sender];
-        require(studentId > 0, "Student ID not linked");
+        if(studentId == 0) revert Errors.E204();
         storeReviewRequest(studentId, _exam_id, _reason);
     }
 
@@ -71,17 +73,13 @@ abstract contract DZReviewManager is DZScoreManager {
         string memory _review_status,
         uint256 _new_score
     ) public onlyRole(LECTURER_ROLE) {
-        require(exams[_exam_id].is_active, "Exam does not exist");
-        require(reviewRequests[_student_id][_exam_id].student_id != 0, "Request not found");
-        require(!reviewRequests[_student_id][_exam_id].is_processed, "Already processed");
-        require(
-            keccak256(abi.encodePacked(_review_status)) == keccak256("APPROVED") ||
-            keccak256(abi.encodePacked(_review_status)) == keccak256("REJECTED"),
-            "Invalid status"
-        );
+        if(!exams[_exam_id].is_active) revert Errors.E301();
+        if(reviewRequests[_student_id][_exam_id].student_id == 0) revert Errors.E701();
+        if(reviewRequests[_student_id][_exam_id].is_processed) revert Errors.E703();
+        if(!(keccak256(abi.encodePacked(_review_status)) == keccak256("APPROVED") || keccak256(abi.encodePacked(_review_status)) == keccak256("REJECTED"))) revert Errors.E704();
 
         if (keccak256(abi.encodePacked(_review_status)) == keccak256("APPROVED")) {
-            require(_new_score <= 100, "Score must be <= 100");
+            if(_new_score > 100) revert Errors.E004();
         }
 
         reviewRequests[_student_id][_exam_id].status = _review_status;
@@ -105,12 +103,7 @@ abstract contract DZReviewManager is DZScoreManager {
         view
         returns (ReviewRequest memory)
     {
-        require(
-            hasRole(LECTURER_ROLE, msg.sender) ||
-            hasRole(ADMIN_ROLE, msg.sender) ||
-            (studentAddresses[_student_id] == msg.sender && hasRole(STUDENT_ROLE, msg.sender)),
-            "Access denied"
-        );
+        if(!(hasRole(LECTURER_ROLE, msg.sender) || hasRole(ADMIN_ROLE, msg.sender) || (studentAddresses[_student_id] == msg.sender && hasRole(STUDENT_ROLE, msg.sender)))) revert Errors.E101();
 
         return reviewRequests[_student_id][_exam_id];
     }
@@ -122,7 +115,7 @@ abstract contract DZReviewManager is DZScoreManager {
         returns (ReviewRequest memory)
     {
         uint256 studentId = addressToStudentId[msg.sender];
-        require(studentId > 0, "Student ID not found");
+        if(studentId == 0) revert Errors.E204();
         return reviewRequests[studentId][_exam_id];
     }
 }

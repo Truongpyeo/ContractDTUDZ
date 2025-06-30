@@ -1,0 +1,1346 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "E001",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E002",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E003",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E004",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E005",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E101",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E103",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E201",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E202",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E203",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E204",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E301",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E302",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E303",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E305",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E601",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E602",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E603",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E604",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E605",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "student_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "exam_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "score",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "scored_by",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "scored_at",
+						"type": "uint256"
+					}
+				],
+				"name": "AnswerScored",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "student_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "exam_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "content",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "submitted_by",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "submitted_at",
+						"type": "uint256"
+					}
+				],
+				"name": "AnswerSubmitted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "student_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "exam_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "old_score",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "new_score",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "updated_by",
+						"type": "address"
+					}
+				],
+				"name": "AnswerUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "exam_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "locked_by",
+						"type": "address"
+					}
+				],
+				"name": "ExamLocked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "exam_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "hash",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "created_by",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "created_at",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "ExamStored",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "RoleGranted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "RoleRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "student_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "studentAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "setBy",
+						"type": "address"
+					}
+				],
+				"name": "StudentAddressSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "student_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "oldAddress",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "updatedBy",
+						"type": "address"
+					}
+				],
+				"name": "StudentAddressUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "ADMIN_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "DEFAULT_ADMIN_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "EMPLOYER_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "LECTURER_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "STUDENT_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "addressToStudentId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "examSubmissions",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "exams",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "hash",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exam_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "created_by",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "created_at",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "is_locked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "is_active",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_student_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getAnswerScore",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getExam",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "hash",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exam_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "created_by",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "created_at",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "is_locked",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "is_active",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getExamSubmissions",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_lecturer",
+						"type": "address"
+					}
+				],
+				"name": "getLecturerExams",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getMyAnswer",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "student_id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "exam_id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "content",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "score",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "submitted_at",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "submitted_by",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "scored_at",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "scored_by",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "is_submitted",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "is_scored",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct DZStudentAnswer.StudentAnswer",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_student_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getStudentAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_student_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getStudentAnswer",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "student_id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "exam_id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "content",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "score",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "submitted_at",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "submitted_by",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "scored_at",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "scored_by",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "is_submitted",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "is_scored",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct DZStudentAnswer.StudentAnswer",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "getStudentIdByAddress",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "grantEmployerRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "grantLecturerRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "grantRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "grantStudentRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "hasRole",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_student_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					}
+				],
+				"name": "hasSubmittedAnswer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "lecturerExams",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					}
+				],
+				"name": "lockExam",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "revokeEmployerRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "revokeLecturerRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "revokeRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "revokeStudentRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_student_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_score",
+						"type": "uint256"
+					}
+				],
+				"name": "scoreAnswer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_student_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_studentAddress",
+						"type": "address"
+					}
+				],
+				"name": "setStudentAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_hash",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					}
+				],
+				"name": "storeExam",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "hash",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exam_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "created_by",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "created_at",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "is_active",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "studentAddresses",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "studentAnswers",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "student_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exam_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "content",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "score",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "submitted_at",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "submitted_by",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "scored_at",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "scored_by",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "is_submitted",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "is_scored",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_student_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_content",
+						"type": "string"
+					}
+				],
+				"name": "submitAnswer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_content",
+						"type": "string"
+					}
+				],
+				"name": "submitMyAnswer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_student_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_exam_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_new_score",
+						"type": "uint256"
+					}
+				],
+				"name": "updateAnswerScore",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_student_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_newAddress",
+						"type": "address"
+					}
+				],
+				"name": "updateStudentAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"DZStudentAnswer.sol": "DZStudentAnswer"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 50
+		},
+		"remappings": []
+	},
+	"sources": {
+		"DZAccessControl.sol": {
+			"keccak256": "0x529ec758d0682d66b638d45dd4ba8c3afbe894f62239e39a274eacbc6f4773fb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3bd5fb66d277e1bc9702eb0672c5779fd59025d6b17a9a6bd13b00728c558830",
+				"dweb:/ipfs/QmWUC2EZLLQRJ8CsgBMBrVUT6tdqhHH7WFXfSybkn2BpvC"
+			]
+		},
+		"DZExamManager.sol": {
+			"keccak256": "0x361c0eb2537f3abfa36a898e72ccd4af5f1053312716198e041136f4d63a586e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fe55b1580dcb25947c2563856680a7e5008bbfffb68bf2b5cd5eaacdaf49cc4a",
+				"dweb:/ipfs/QmU3fu1TPwd7zvyz84aZEa57K41x5pA6Pn1DRE9kafLnF1"
+			]
+		},
+		"DZStudentAnswer.sol": {
+			"keccak256": "0xbd58577b2f5251d4ea6fb160d08c2a597f63bc027ca59bb70cefed6b8a95bfd0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://990e861d7839475519c29989234d92128f94162e56c36a01c5e1d6615da7d0a7",
+				"dweb:/ipfs/Qma5EbFCktkU54yLovwgTgbU1EMB3kAWBkQ9SyJmoN8BVh"
+			]
+		},
+		"Errors.sol": {
+			"keccak256": "0x23580d09f44e6c8621943aff3da5b625661c65812317bb6cffc5301c829bd30f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://45d0a0fd11c275453b1b4a5b8759474f7621ee086fe12717477849c56f306840",
+				"dweb:/ipfs/QmPHh5r4XYX3aSApamARBjo3a18tpYBUSYhT6h8kP31DGx"
+			]
+		}
+	},
+	"version": 1
+}

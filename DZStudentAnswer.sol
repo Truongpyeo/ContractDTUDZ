@@ -1,60 +1,175 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.6;
 
-import "./DZAccessControl.sol";
+import "./DZExamManager.sol";
 
-contract StudentAnswer is DZAccessControl {
-    struct Answer {
+abstract contract DZStudentAnswer is DZExamManager {
+    struct StudentAnswer {
         uint256 student_id;
         uint256 exam_id;
-        string content; // Hash of all answers
-        uint256 score;  // Default = 0
-        bool submitted;
+        string content;         // Hash của tất cả câu trả lời
+        uint256 score;          // Điểm sau khi chấm (default = 0)
+        uint256 submitted_at;   // Thời gian nộp bài
+        address submitted_by;   // Địa chỉ nộp bài
+        uint256 scored_at;      // Thời gian chấm điểm
+        address scored_by;      // Giảng viên chấm điểm
+        bool is_submitted;      // Đã nộp bài chưa
+        bool is_scored;         // Đã chấm điểm chưa
     }
 
-    // Mapping: student_id => exam_id => Answer
-    mapping(uint256 => mapping(uint256 => Answer)) private _answers;
+    mapping(uint256 => mapping(uint256 => StudentAnswer)) public studentAnswers;
+    mapping(uint256 => uint256[]) public examSubmissions; // exam_id => student_ids[]
 
-    // Event: Nộp bài và chấm điểm
-    event AnswerSubmitted(uint256 indexed student_id, uint256 indexed exam_id, string content);
-    event ScoreUpdated(uint256 indexed student_id, uint256 indexed exam_id, uint256 newScore);
+    event AnswerSubmitted(
+        uint256 indexed student_id,
+        uint256 indexed exam_id,
+        string content,
+        address indexed submitted_by,
+        uint256 submitted_at
+    );
 
-    /// @notice Sinh viên nộp bài (chỉ 1 lần cho mỗi exam_id)
-    function submitAnswer(uint256 student_id, uint256 exam_id, string calldata content) external onlyRole(STUDENT_ROLE) {
-        require(!_answers[student_id][exam_id].submitted, "Already submitted");
+    event AnswerScored(
+        uint256 indexed student_id,
+        uint256 indexed exam_id,
+        uint256 score,
+        address indexed scored_by,
+        uint256 scored_at
+    );
 
-        _answers[student_id][exam_id] = Answer({
-            student_id: student_id,
-            exam_id: exam_id,
-            content: content,
+    event AnswerUpdated(
+        uint256 indexed student_id,
+        uint256 indexed exam_id,
+        uint256 old_score,
+        uint256 new_score,
+        address indexed updated_by
+    );
+
+    function submitAnswer(uint256 _student_id, uint256 _exam_id, string memory _content) 
+        public 
+        onlyRole(STUDENT_ROLE) 
+    {
+        if(_student_id == 0) revert Errors.E003();
+        if(!exams[_exam_id].is_active) revert Errors.E301();
+        if(exams[_exam_id].is_locked) revert Errors.E303();
+        if(studentAddresses[_student_id] != msg.sender) revert Errors.E605();
+        if(bytes(_content).length == 0) revert Errors.E002();
+        if(studentAnswers[_student_id][_exam_id].is_submitted) revert Errors.E602();
+
+        studentAnswers[_student_id][_exam_id] = StudentAnswer({
+            student_id: _student_id,
+            exam_id: _exam_id,
+            content: _content,
             score: 0,
-            submitted: true
+            submitted_at: block.timestamp,
+            submitted_by: msg.sender,
+            scored_at: 0,
+            scored_by: address(0),
+            is_submitted: true,
+            is_scored: false
         });
 
-        emit AnswerSubmitted(student_id, exam_id, content);
+        examSubmissions[_exam_id].push(_student_id);
+
+        emit AnswerSubmitted(_student_id, _exam_id, _content, msg.sender, block.timestamp);
     }
 
-    /// @notice Giảng viên chấm điểm
-    function updateScore(uint256 student_id, uint256 exam_id, uint256 newScore) external onlyRole(LECTURER_ROLE) {
-        require(_answers[student_id][exam_id].submitted, "Not submitted yet");
-
-        _answers[student_id][exam_id].score = newScore;
-
-        emit ScoreUpdated(student_id, exam_id, newScore);
+    function submitMyAnswer(uint256 _exam_id, string memory _content) 
+        public 
+        onlyRole(STUDENT_ROLE) 
+    {
+        uint256 studentId = addressToStudentId[msg.sender];
+        if(studentId == 0) revert Errors.E204();
+        submitAnswer(studentId, _exam_id, _content);
     }
 
-    /// @notice Truy xuất bài làm
-    function getAnswer(uint256 student_id, uint256 exam_id) external view returns (Answer memory) {
-        return _answers[student_id][exam_id];
+    function scoreAnswer(uint256 _student_id, uint256 _exam_id, uint256 _score) 
+        public 
+        onlyRole(LECTURER_ROLE) 
+    {
+        if(!exams[_exam_id].is_active) revert Errors.E301();
+        if(_score > 100) revert Errors.E004();
+        if(!studentAnswers[_student_id][_exam_id].is_submitted) revert Errors.E603();
+
+        uint256 oldScore = studentAnswers[_student_id][_exam_id].score;
+        
+        studentAnswers[_student_id][_exam_id].score = _score;
+        studentAnswers[_student_id][_exam_id].scored_at = block.timestamp;
+        studentAnswers[_student_id][_exam_id].scored_by = msg.sender;
+        studentAnswers[_student_id][_exam_id].is_scored = true;
+
+        if (oldScore != _score) {
+            emit AnswerUpdated(_student_id, _exam_id, oldScore, _score, msg.sender);
+        }
+
+        emit AnswerScored(_student_id, _exam_id, _score, msg.sender, block.timestamp);
     }
 
-    /// @notice Truy xuất điểm
-    function getScore(uint256 student_id, uint256 exam_id) external view returns (uint256) {
-        return _answers[student_id][exam_id].score;
+    function updateAnswerScore(uint256 _student_id, uint256 _exam_id, uint256 _new_score) 
+        public 
+        onlyRole(LECTURER_ROLE) 
+    {
+        if(!exams[_exam_id].is_active) revert Errors.E301();
+        if(_new_score > 100) revert Errors.E004();
+        if(!studentAnswers[_student_id][_exam_id].is_submitted) revert Errors.E603();
+        if(!studentAnswers[_student_id][_exam_id].is_scored) revert Errors.E604();
+
+        uint256 oldScore = studentAnswers[_student_id][_exam_id].score;
+        if(oldScore == _new_score) revert Errors.E001();
+
+        studentAnswers[_student_id][_exam_id].score = _new_score;
+        studentAnswers[_student_id][_exam_id].scored_at = block.timestamp;
+        studentAnswers[_student_id][_exam_id].scored_by = msg.sender;
+
+        emit AnswerUpdated(_student_id, _exam_id, oldScore, _new_score, msg.sender);
     }
 
-    /// @notice Kiểm tra đã nộp hay chưa
-    function hasSubmitted(uint256 student_id, uint256 exam_id) external view returns (bool) {
-        return _answers[student_id][exam_id].submitted;
+    function getStudentAnswer(uint256 _student_id, uint256 _exam_id) 
+        public 
+        view 
+        returns (StudentAnswer memory) 
+    {
+        if(!(hasRole(LECTURER_ROLE, msg.sender) || hasRole(ADMIN_ROLE, msg.sender) || (studentAddresses[_student_id] == msg.sender && hasRole(STUDENT_ROLE, msg.sender)))) revert Errors.E101();
+        
+        require(studentAnswers[_student_id][_exam_id].is_submitted, "Answer not found");
+        return studentAnswers[_student_id][_exam_id];
     }
-}
+
+    function getMyAnswer(uint256 _exam_id) 
+        public 
+        view 
+        onlyRole(STUDENT_ROLE) 
+        returns (StudentAnswer memory) 
+    {
+        uint256 studentId = addressToStudentId[msg.sender];
+        if(studentId == 0) revert Errors.E204();
+        if(!studentAnswers[studentId][_exam_id].is_submitted) revert Errors.E601();
+        return studentAnswers[studentId][_exam_id];
+    }
+
+    function getExamSubmissions(uint256 _exam_id) 
+        public 
+        view 
+        returns (uint256[] memory) 
+    {
+        if(!(hasRole(LECTURER_ROLE, msg.sender) || hasRole(ADMIN_ROLE, msg.sender))) revert Errors.E101();
+        return examSubmissions[_exam_id];
+    }
+
+    function hasSubmittedAnswer(uint256 _student_id, uint256 _exam_id) 
+        public 
+        view 
+        returns (bool) 
+    {
+        return studentAnswers[_student_id][_exam_id].is_submitted;
+    }
+
+    function getAnswerScore(uint256 _student_id, uint256 _exam_id) 
+        public 
+        view 
+        returns (uint256) 
+    {
+        if(!(hasRole(LECTURER_ROLE, msg.sender) || hasRole(ADMIN_ROLE, msg.sender) || (studentAddresses[_student_id] == msg.sender && hasRole(STUDENT_ROLE, msg.sender)))) revert Errors.E101();
+        if(!studentAnswers[_student_id][_exam_id].is_submitted) revert Errors.E601();
+        return studentAnswers[_student_id][_exam_id].score;
+    }
+} 

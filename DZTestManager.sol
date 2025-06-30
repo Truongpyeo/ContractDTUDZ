@@ -15,14 +15,21 @@ abstract contract DZTestManager is DZTraceLogger {
     mapping(uint256 => Tests) public tests;
     mapping(uint256 => uint256[]) public userTests;
 
-    event TestCreated(uint256 indexed test_id, uint256 indexed id_created_by, uint256 created_at);
+    event TestCreated(
+        uint256 indexed test_id,
+        uint256 indexed id_created_by,
+        uint256 created_at
+    );
     event TestBlocked(uint256 indexed test_id, address indexed blocked_by);
     event TestUnblocked(uint256 indexed test_id, address indexed unblocked_by);
 
-    function createTest(uint256 _test_id, uint256 _id_created_by) public onlyRole(ADMIN_ROLE) {
-        require(_test_id > 0, "Invalid test ID");
-        require(_id_created_by > 0, "Invalid creator ID");
-        require(!tests[_test_id].is_active, "Test already exists");
+    function createTest(
+        uint256 _test_id,
+        uint256 _id_created_by
+    ) public onlyRole(ADMIN_ROLE) {
+        if(_test_id == 0) revert Errors.E003();
+        if(_id_created_by == 0) revert Errors.E003();
+        if(tests[_test_id].is_active) revert Errors.E402();
 
         tests[_test_id] = Tests({
             test_id: _test_id,
@@ -37,22 +44,23 @@ abstract contract DZTestManager is DZTraceLogger {
     }
 
     function blockTest(uint256 _test_id) public onlyRole(ADMIN_ROLE) {
-        require(tests[_test_id].is_active, "Test does not exist");
-        require(!tests[_test_id].is_blocked, "Test already blocked");
-
+        if(!tests[_test_id].is_active) revert Errors.E401();
+        if(tests[_test_id].is_blocked) revert Errors.E404();
         tests[_test_id].is_blocked = true;
         emit TestBlocked(_test_id, msg.sender);
     }
 
     function unblockTest(uint256 _test_id) public onlyRole(ADMIN_ROLE) {
-        require(tests[_test_id].is_active, "Test does not exist");
-        require(tests[_test_id].is_blocked, "Test is not blocked");
+        if(!tests[_test_id].is_active) revert Errors.E401();
+        if(!tests[_test_id].is_blocked) revert Errors.E405();
 
         tests[_test_id].is_blocked = false;
         emit TestUnblocked(_test_id, msg.sender);
     }
 
-    function getTest(uint256 _test_id)
+    function getTest(
+        uint256 _test_id
+    )
         public
         view
         returns (
@@ -64,7 +72,7 @@ abstract contract DZTestManager is DZTraceLogger {
         )
     {
         Tests memory testData = tests[_test_id];
-        require(testData.is_active, "Test does not exist");
+        if(!testData.is_active) revert Errors.E401();
         return (
             testData.test_id,
             testData.id_created_by,
@@ -74,7 +82,9 @@ abstract contract DZTestManager is DZTraceLogger {
         );
     }
 
-    function getUserTests(uint256 _user_id) public view returns (uint256[] memory) {
+    function getUserTests(
+        uint256 _user_id
+    ) public view returns (uint256[] memory) {
         return userTests[_user_id];
     }
 }

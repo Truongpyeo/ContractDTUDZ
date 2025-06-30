@@ -1,0 +1,276 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122036068d8fb642fb8adce48434d309c39ade76894813912333d2ad7a8c9e9ac66464736f6c634300081e0033",
+			"opcodes": "PUSH1 0x56 PUSH1 0x37 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x2A JUMPI PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH1 0x0 MSTORE PUSH1 0x0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CALLDATASIZE MOD DUP14 DUP16 0xB6 TIMESTAMP EXTSTATICCALL DUP11 0xDC RETF DUP5 CALLVALUE 0xD3 MULMOD 0xC3 SWAP11 0xDE PUSH23 0x894813912333D2AD7A8C9E9AC66464736F6C634300081E STOP CALLER ",
+			"sourceMap": "60:2361:0:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;60:2361:0;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122036068d8fb642fb8adce48434d309c39ade76894813912333d2ad7a8c9e9ac66464736f6c634300081e0033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CALLDATASIZE MOD DUP14 DUP16 0xB6 TIMESTAMP EXTSTATICCALL DUP11 0xDC RETF DUP5 CALLVALUE 0xD3 MULMOD 0xC3 SWAP11 0xDE PUSH23 0x894813912333D2AD7A8C9E9AC66464736F6C634300081E STOP CALLER ",
+			"sourceMap": "60:2361:0:-:0;;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "17200",
+				"executionCost": "103",
+				"totalCost": "17303"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "E001",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E002",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E003",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E004",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E005",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E101",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E102",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E103",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E104",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E105",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E201",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E202",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E203",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E204",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E301",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E302",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E303",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E304",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E305",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E401",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E402",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E403",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E404",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E405",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E501",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E502",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E503",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E504",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E601",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E602",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E603",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E604",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E605",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E701",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E702",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E703",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E704",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E801",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E802",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E803",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E804",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E901",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E902",
+			"type": "error"
+		}
+	]
+}

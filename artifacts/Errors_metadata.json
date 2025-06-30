@@ -1,0 +1,261 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "E001",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E002",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E003",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E004",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E005",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E101",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E102",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E103",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E104",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E105",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E201",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E202",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E203",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E204",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E301",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E302",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E303",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E304",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E305",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E401",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E402",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E403",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E404",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E405",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E501",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E502",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E503",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E504",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E601",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E602",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E603",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E604",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E605",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E701",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E702",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E703",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E704",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E801",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E802",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E803",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E804",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E901",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "E902",
+				"type": "error"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Errors.sol": "Errors"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 50
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Errors.sol": {
+			"keccak256": "0x23580d09f44e6c8621943aff3da5b625661c65812317bb6cffc5301c829bd30f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://45d0a0fd11c275453b1b4a5b8759474f7621ee086fe12717477849c56f306840",
+				"dweb:/ipfs/QmPHh5r4XYX3aSApamARBjo3a18tpYBUSYhT6h8kP31DGx"
+			]
+		}
+	},
+	"version": 1
+}

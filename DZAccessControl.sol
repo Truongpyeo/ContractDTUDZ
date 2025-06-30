@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
+import "./Errors.sol";
+
 abstract contract DZAccessControl {
     mapping(bytes32 => mapping(address => bool)) private _roles;
     mapping(bytes32 => bytes32) private _roleAdmins;
@@ -87,10 +89,10 @@ abstract contract DZAccessControl {
     }
 
     function setStudentAddress(uint256 _student_id, address _studentAddress) public onlyRole(ADMIN_ROLE) {
-        require(_student_id > 0, "Invalid student ID");
-        require(_studentAddress != address(0), "Invalid address");
-        require(studentAddresses[_student_id] == address(0), "Student address already set");
-        require(addressToStudentId[_studentAddress] == 0, "Address already linked to another student");
+        if(_student_id == 0) revert Errors.E003();
+        if(_studentAddress == address(0)) revert Errors.E005();
+        if(studentAddresses[_student_id] != address(0)) revert Errors.E203();
+        if(addressToStudentId[_studentAddress] != 0) revert Errors.E202();
 
         studentAddresses[_student_id] = _studentAddress;
         addressToStudentId[_studentAddress] = _student_id;
@@ -99,10 +101,10 @@ abstract contract DZAccessControl {
     }
 
     function updateStudentAddress(uint256 _student_id, address _newAddress) public onlyRole(ADMIN_ROLE) {
-        require(_student_id > 0, "Invalid student ID");
-        require(_newAddress != address(0), "Invalid address");
-        require(studentAddresses[_student_id] != address(0), "Student address not set");
-        require(addressToStudentId[_newAddress] == 0, "Address already linked to another student");
+        if(_student_id == 0) revert Errors.E003();
+        if(_newAddress == address(0)) revert Errors.E005();
+        if(studentAddresses[_student_id] == address(0)) revert Errors.E201();
+        if(addressToStudentId[_newAddress] != 0) revert Errors.E202();
 
         address oldAddress = studentAddresses[_student_id];
         delete addressToStudentId[oldAddress];

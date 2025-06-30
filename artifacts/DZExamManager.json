@@ -79,6 +79,61 @@
 	},
 	"abi": [
 		{
+			"inputs": [],
+			"name": "E002",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E003",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E005",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E101",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E103",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E201",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E202",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E203",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E301",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E302",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E305",
+			"type": "error"
+		},
+		{
 			"anonymous": false,
 			"inputs": [
 				{

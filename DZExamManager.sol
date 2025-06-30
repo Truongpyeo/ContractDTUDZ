@@ -2,6 +2,7 @@
 pragma solidity ^0.8.6;
 
 import "./DZAccessControl.sol";
+import "./Errors.sol";
 
 abstract contract DZExamManager is DZAccessControl {
     struct Exam {
@@ -34,13 +35,13 @@ abstract contract DZExamManager is DZAccessControl {
             string memory hash,
             uint256 exam_id,
             address created_by,
-            uint256 created_at, 
+            uint256 created_at,
             bool is_active
         )
     {
-        require(_exam_id > 0, "Invalid exam ID");
-        require(bytes(_hash).length > 0, "Hash cannot be empty");
-        require(!exams[_exam_id].is_active, "Exam already exists");
+        if(_exam_id == 0) revert Errors.E003();
+        if(bytes(_hash).length == 0) revert Errors.E002();
+        if(exams[_exam_id].is_active) revert Errors.E302();
 
         exams[_exam_id] = Exam({
             hash: _hash,
@@ -66,17 +67,9 @@ abstract contract DZExamManager is DZAccessControl {
     }
 
     function lockExam(uint256 _exam_id) public {
-        require(
-            hasRole(LECTURER_ROLE, msg.sender) ||
-                hasRole(ADMIN_ROLE, msg.sender),
-            "Caller must be admin or lecturer"
-        );
-        require(exams[_exam_id].is_active, "Exam does not exist");
-        require(
-            exams[_exam_id].created_by == msg.sender ||
-                hasRole(ADMIN_ROLE, msg.sender),
-            "Only exam creator or admin can lock"
-        );
+        if(!(hasRole(LECTURER_ROLE, msg.sender) || hasRole(ADMIN_ROLE, msg.sender))) revert Errors.E101();
+        if(!exams[_exam_id].is_active) revert Errors.E301();
+        if(!(exams[_exam_id].created_by == msg.sender || hasRole(ADMIN_ROLE, msg.sender))) revert Errors.E305();
 
         exams[_exam_id].is_locked = true;
         emit ExamLocked(_exam_id, msg.sender);
@@ -110,11 +103,7 @@ abstract contract DZExamManager is DZAccessControl {
         view
         returns (uint256[] memory)
     {
-        require(
-            hasRole(LECTURER_ROLE, _lecturer) ||
-                hasRole(ADMIN_ROLE, _lecturer),
-            "Address is not a lecturer"
-        );
+        if(!(hasRole(LECTURER_ROLE, _lecturer) || hasRole(ADMIN_ROLE, _lecturer))) revert Errors.E103();
         return lecturerExams[_lecturer];
     }
 }

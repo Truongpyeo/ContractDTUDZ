@@ -73,6 +73,31 @@
 	},
 	"abi": [
 		{
+			"inputs": [],
+			"name": "E003",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E005",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E201",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E202",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "E203",
+			"type": "error"
+		},
+		{
 			"anonymous": false,
 			"inputs": [
 				{
